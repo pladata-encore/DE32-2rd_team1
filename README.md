@@ -133,4 +133,4 @@
 ## 참고
 
 프로젝트 관련 코드
-- Team Reposit: [바로가기](https://github.com/orgs/asset-No-1/repositories)
+- Team Reposit: [바로가기](https://github.com/asset-No-1/teamchat)
