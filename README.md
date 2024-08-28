@@ -25,6 +25,7 @@
 
 **팀 이름**: Asset-No-1  
 **의미**: 미래 자산 1조를 담은 의미의 팀 이름입니다.
+
 <img src="https://github.com/user-attachments/assets/54c8f2f6-5f6e-4c1c-a738-3f6077eaaeb5" alt="자산 1조 이미지" width="250" />
 
 ### 팀원
