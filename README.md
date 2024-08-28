@@ -118,13 +118,70 @@
 
 ### 설치
 
-- [설치 방법 적기]
+### 사전 요구사항
+- `python 3.8` 이상이 설치되어 있어야 합니다.
+- `java`가 설치되어 있어야 합니다.
+- `kafka-python`이 설치되어 있어야 합니다.
+
+```python
+pip install kafka-python
+```
+
+- [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/start.html)가 설치되어 있어야 합니다.
+- [Apache Kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.8.0/kafka_2.13-3.8.0.tgz)가 설치되어 있어야 >합니다.
+- movie data가 사전에 있어야 합니다.
+
+1. 리포지토리를 클론합니다:
+```bash
+git clone https://github.com/asset-No-1/airflow_chat.git
+```
+
+2. 에어플로우에 접속한 후, "movie_chat" dags를 실행시킵니다.
+
+3. 경로에 파일이 제대로 저장되었는지 확인합니다.
+
+### 채팅 애플리케이션 실행
+- 리포지토리를 클론합니다:
+
+```bash
+https://github.com/asset-No-1/teamchat.git
+```
+
+- Kafka가 설치된 경로로 이동하여 Zookeeper와 Kafka를 실행합니다:
+1. Zookeeper 실행
+
+```bash
+bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
+```
+
+2. Kafka 실행
+
+```bash
+bin/kafka-server-start.sh -daemon config/server.properties
+```
+
+- 실행파일에서 서버주소를 수정합니다:
+
+```bash
+vi src/teamchat/api/chat3.py
+```
+
+```python
+bootstrap_servers=['서버주소 입력:9092']
+```
+
+- 애플리케이션을 시작합니다:
+
+```bash
+python src/teamchat/api/chat3.py
+```
 
 ### 사용법
 
-- 메신저를 실행하고, 사용자 계정을 등록합니다.
-- 업무 대화, 시스템 챗봇, 영화 챗봇 기능을 사용하여 다양한 기능을 테스트합니다.
-- 데이터 감사 및 통계 시각화는 Zeppelin 대시보드에서 확인할 수 있습니다.
+1. 사용자는 [사용자 이름]을 입력 후 채팅방을 참여합니다.
+2. 채팅방에서 메시지를 입력하고 실시간으로 팀원들과 소통할 수 있습니다.
+3. 채팅방에서 '@'를 입력 후 영화제목을 입력하면 영화 상세정보를 확인할 수 있습니다.
+4. `chat3.py`에서 `topic` 을 다르게 하면 새로운 채팅방에서 대화를 할 수 있습니다. (default topic = Product)
 
 ## 기여
 
